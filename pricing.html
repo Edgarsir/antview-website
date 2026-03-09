@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pricing - Antview CRM</title>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="chatbot.css">
+<style>
+.pricing-toggle{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:16px;
+margin-top:32px;
+}
+.toggle-label{
+font-size:16px;
+font-weight:500;
+color:var(--text-primary);
+}
+.discount-badge{
+background:linear-gradient(135deg,#34a853,#4caf50);
+color:white;
+padding:4px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:500;
+margin-left:8px;
+}
+.toggle-switch{
+position:relative;
+display:inline-block;
+width:56px;
+height:28px;
+}
+.toggle-switch input{
+opacity:0;
+width:0;
+height:0;
+}
+.toggle-slider{
+position:absolute;
+cursor:pointer;
+top:0;
+left:0;
+right:0;
+bottom:0;
+background:var(--google-border);
+transition:0.3s;
+border-radius:28px;
+}
+.toggle-slider:before{
+position:absolute;
+content:"";
+height:20px;
+width:20px;
+left:4px;
+bottom:4px;
+background:white;
+transition:0.3s;
+border-radius:50%;
+}
+.toggle-switch input:checked + .toggle-slider{
+background:var(--antview-primary);
+}
+.toggle-switch input:checked + .toggle-slider:before{
+transform:translateX(28px);
+}
+.recommended-badge{
+position:absolute;
+top:-12px;
+right:20px;
+background:linear-gradient(135deg,#ff6b35,#ff8c42);
+color:white;
+padding:6px 16px;
+border-radius:20px;
+font-size:12px;
+font-weight:500;
+box-shadow:0 2px 8px rgba(255,107,53,0.3);
+}
+.yearly-savings{
+color:#34a853;
+font-size:14px;
+font-weight:500;
+margin-bottom:8px;
+}
+.pricing-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:32px;
+margin-top:60px;
+}
+.pricing-card{
+background:white;
+padding:40px;
+border-radius:8px;
+border:1px solid var(--google-border);
+transition:all 0.2s;
+text-align:center;
+position:relative;
+}
+.pricing-card.featured{
+border:2px solid var(--google-blue);
+box-shadow:0 4px 12px rgba(26,115,232,0.2);
+}
+.pricing-card:hover{
+box-shadow:0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
+}
+.plan-name{
+font-size:24px;
+font-weight:500;
+margin-bottom:16px;
+}
+.plan-price{
+font-size:48px;
+font-weight:400;
+color:var(--google-blue);
+margin-bottom:8px;
+}
+.price-period{
+font-size:20px;
+color:var(--text-secondary);
+}
+.plan-description{
+color:var(--text-secondary);
+margin-bottom:32px;
+font-size:14px;
+}
+.plan-features{
+list-style:none;
+padding:0;
+margin:32px 0;
+text-align:left;
+}
+.plan-features li{
+padding:12px 0;
+border-bottom:1px solid var(--google-border);
+font-size:14px;
+display:flex;
+align-items:center;
+gap:12px;
+}
+.plan-features li:last-child{
+border-bottom:none;
+}
+.plan-features .material-icons{
+color:var(--google-green);
+font-size:20px;
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container nav-container">
+<a href="index.html" class="logo"><img src="image-removebg-preview (2).png" alt="Antview Logo" class="logo-img"></a>
+<button class="mobile-menu-toggle" aria-label="Toggle menu">
+<span></span>
+<span></span>
+<span></span>
+</button>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="features.html">Features</a>
+<a href="about.html">About</a>
+<a href="pricing.html">Pricing</a>
+<a href="contact.html">Contact</a>
+<a href="demo.html" class="btn-nav">Get Demo</a>
+</div>
+</div>
+</nav>
+
+<section class="page-header">
+<div class="container">
+<h1>Simple, Transparent Pricing</h1>
+<p>Choose the plan that's right for your institute</p>
+<div class="pricing-toggle">
+<span class="toggle-label">Monthly</span>
+<label class="toggle-switch">
+<input type="checkbox" id="billingToggle">
+<span class="toggle-slider"></span>
+</label>
+<span class="toggle-label">Yearly <span class="discount-badge">Save 20%</span></span>
+</div>
+</div>
+</section>
+
+<section class="page-content">
+<div class="container">
+
+<div class="pricing-grid">
+
+<div class="pricing-card">
+<div class="plan-name">Starter</div>
+<div class="plan-price">
+<span class="monthly-price">₹2,999</span>
+<span class="yearly-price" style="display:none;">₹28,788</span>
+<span class="price-period">/month</span>
+</div>
+<div class="plan-description">Perfect for small coaching centers</div>
+<ul class="plan-features">
+<li><span class="material-icons">check_circle</span> Up to 100 students</li>
+<li><span class="material-icons">check_circle</span> Lead management</li>
+<li><span class="material-icons">check_circle</span> Fee tracking</li>
+<li><span class="material-icons">check_circle</span> Basic reports</li>
+<li><span class="material-icons">check_circle</span> Email support</li>
+</ul>
+<a href="demo.html" class="btn-secondary" style="width:100%;justify-content:center;">Get Started</a>
+</div>
+
+<div class="pricing-card featured">
+<div class="recommended-badge">Recommended</div>
+<div class="plan-name">Professional</div>
+<div class="plan-price">
+<span class="monthly-price">₹5,999</span>
+<span class="yearly-price" style="display:none;">₹57,590</span>
+<span class="price-period">/month</span>
+</div>
+<div class="yearly-savings" style="display:none;">Save ₹14,398/year</div>
+<div class="plan-description">Most popular for growing institutes</div>
+<ul class="plan-features">
+<li><span class="material-icons">check_circle</span> Up to 500 students</li>
+<li><span class="material-icons">check_circle</span> All Starter features</li>
+<li><span class="material-icons">check_circle</span> WhatsApp integration</li>
+<li><span class="material-icons">check_circle</span> Advanced analytics</li>
+<li><span class="material-icons">check_circle</span> Batch management</li>
+<li><span class="material-icons">check_circle</span> Priority support</li>
+</ul>
+<a href="demo.html" class="btn-primary" style="width:100%;justify-content:center;">Get Started</a>
+</div>
+
+<div class="pricing-card">
+<div class="plan-name">Enterprise</div>
+<div class="plan-price">Custom</div>
+<div class="plan-description">For large institutions</div>
+<ul class="plan-features">
+<li><span class="material-icons">check_circle</span> Unlimited students</li>
+<li><span class="material-icons">check_circle</span> All Professional features</li>
+<li><span class="material-icons">check_circle</span> Custom integrations</li>
+<li><span class="material-icons">check_circle</span> Dedicated account manager</li>
+<li><span class="material-icons">check_circle</span> Custom training</li>
+<li><span class="material-icons">check_circle</span> 24/7 phone support</li>
+</ul>
+<a href="contact.html" class="btn-secondary" style="width:100%;justify-content:center;">Contact Sales</a>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="page-content" style="background:var(--google-light-gray);">
+<div class="container">
+<div class="section-header">
+<h2>Frequently Asked Questions</h2>
+</div>
+<div class="content-section">
+<h3>Can I change my plan later?</h3>
+<p>Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.</p>
+</div>
+<div class="content-section">
+<h3>Is there a free trial?</h3>
+<p>Yes, we offer a 14-day free trial for all plans. No credit card required.</p>
+</div>
+<div class="content-section">
+<h3>What payment methods do you accept?</h3>
+<p>We accept all major credit cards, debit cards, and bank transfers.</p>
+</div>
+<div class="content-section">
+<h3>Do you offer discounts for annual billing?</h3>
+<p>Yes, we offer a 20% discount when you choose annual billing.</p>
+</div>
+</div>
+</section>
+
+<section class="cta">
+<div class="container">
+<h2>Ready to get started?</h2>
+<p>Start your 14-day free trial today. No credit card required.</p>
+<a href="demo.html" class="btn-primary btn-large">
+Start free trial
+<span class="material-icons">arrow_forward</span>
+</a>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h4>Antview CRM</h4>
+<p>Smart CRM solution for coaching centers and educational institutes.</p>
+</div>
+<div class="footer-section">
+<h4>Product</h4>
+<a href="features.html">Features</a>
+<a href="pricing.html">Pricing</a>
+<a href="demo.html">Request Demo</a>
+</div>
+<div class="footer-section">
+<h4>Company</h4>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+</div>
+<div class="footer-section">
+<h4>Legal</h4>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Antview CRM. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script src="mobile-menu.js"></script>
+<script src="animations.js"></script>
+<script src="chatbot.js"></script>
+<script>
+// Pricing toggle functionality
+document.getElementById('billingToggle').addEventListener('change', function() {
+    const isYearly = this.checked;
+    const monthlyPrices = document.querySelectorAll('.monthly-price');
+    const yearlyPrices = document.querySelectorAll('.yearly-price');
+    const yearlySavings = document.querySelectorAll('.yearly-savings');
+    
+    monthlyPrices.forEach(price => {
+        price.style.display = isYearly ? 'none' : 'inline';
+    });
+    
+    yearlyPrices.forEach(price => {
+        price.style.display = isYearly ? 'inline' : 'none';
+    });
+    
+    yearlySavings.forEach(saving => {
+        saving.style.display = isYearly ? 'block' : 'none';
+    });
+});
+</script>
+</body>
+</html>

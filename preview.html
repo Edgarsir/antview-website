@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="0; url=index.html">
+<title>Redirecting to Antview CRM...</title>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<style>
+
+:root{
+--google-blue:#1a73e8;
+--google-blue-dark:#1557b0;
+--google-blue-light:#4285f4;
+--google-green:#34a853;
+--google-yellow:#fbbc04;
+--google-red:#ea4335;
+--google-gray:#5f6368;
+--google-light-gray:#f8f9fa;
+--google-border:#dadce0;
+--text-primary:#202124;
+--text-secondary:#5f6368;
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+body{
+font-family:'Roboto','Arial',sans-serif;
+background:white;
+color:var(--text-primary);
+line-height:1.6;
+-webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3,h4{
+font-family:'Google Sans','Roboto',sans-serif;
+color:var(--text-primary);
+font-weight:500;
+}
+
+.container{
+max-width:1200px;
+margin:0 auto;
+padding:0 24px;
+}
+
+/* Navigation */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 0;
+position:sticky;
+top:0;
+background:white;
+z-index:1000;
+border-bottom:1px solid var(--google-border);
+}
+
+nav .logo{
+font-family:'Google Sans',sans-serif;
+font-size:22px;
+font-weight:500;
+color:var(--text-primary);
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+nav .logo span{
+color:var(--google-blue);
+}
+
+nav .nav-links a{
+text-decoration:none;
+margin-left:32px;
+color:var(--text-secondary);
+font-size:14px;
+font-weight:500;
+transition:color 0.2s;
+}
+
+nav .nav-links a:hover{
+color:var(--text-primary);
+}
+
+/* Hero Section */
+.hero{
+padding:80px 0 100px 0;
+text-align:center;
+background:white;
+}
+
+.hero h1{
+font-size:56px;
+font-weight:400;
+color:var(--text-primary);
+line-height:1.1;
+margin-bottom:24px;
+}
+
+.hero .subtitle{
+font-size:20px;
+color:var(--text-secondary);
+max-width:700px;
+margin:0 auto 40px;
+line-height:1.6;
+}
+
+.hero-buttons{
+display:flex;
+gap:16px;
+justify-content:center;
+align-items:center;
+}
+
+.btn-primary{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:12px 24px;
+background:var(--google-blue);
+color:white;
+text-decoration:none;
+border-radius:4px;
+font-size:14px;
+font-weight:500;
+transition:all 0.2s;
+box-shadow:0 1px 2px 0 rgba(60,64,67,0.3),0 1px 3px 1px rgba(60,64,67,0.15);
+border:none;
+cursor:pointer;
+}
+
+.btn-primary:hover{
+background:var(--google-blue-dark);
+box-shadow:0 1px 3px 0 rgba(60,64,67,0.3),0 4px 8px 3px rgba(60,64,67,0.15);
+}
+
+.btn-secondary{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:12px 24px;
+background:white;
+color:var(--google-blue);
+text-decoration:none;
+border-radius:4px;
+font-size:14px;
+font-weight:500;
+border:1px solid var(--google-border);
+transition:all 0.2s;
+cursor:pointer;
+}
+
+.btn-secondary:hover{
+background:var(--google-light-gray);
+border-color:var(--google-gray);
+}
+
+/* Features Section */
+.features{
+padding:80px 0;
+background:var(--google-light-gray);
+}
+
+.section-header{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-header h2{
+font-size:40px;
+font-weight:400;
+margin-bottom:16px;
+}
+
+.section-header p{
+font-size:18px;
+color:var(--text-secondary);
+max-width:700px;
+margin:0 auto;
+}
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:24px;
+}
+
+.feature-card{
+background:white;
+padding:32px;
+border-radius:8px;
+border:1px solid var(--google-border);
+transition:all 0.2s;
+}
+
+.feature-card:hover{
+box-shadow:0 1px 2px 0 rgba(60,64,67,0.3),0 2px 6px 2px rgba(60,64,67,0.15);
+}
+
+.feature-icon{
+width:48px;
+height:48px;
+background:var(--google-blue);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:20px;
+}
+
+.feature-icon .material-icons{
+color:white;
+font-size:24px;
+}
+
+.feature-card h3{
+font-size:20px;
+font-weight:500;
+margin-bottom:12px;
+}
+
+.feature-card p{
+font-size:14px;
+color:var(--text-secondary);
+line-height:1.6;
+}
+
+/* Stats Section */
+.stats{
+padding:80px 0;
+background:white;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:32px;
+margin-top:48px;
+}
+
+.stat-item{
+text-align:center;
+}
+
+.stat-number{
+font-size:56px;
+font-weight:400;
+color:var(--google-blue);
+line-height:1;
+margin-bottom:8px;
+}
+
+.stat-label{
+font-size:16px;
+color:var(--text-secondary);
+}
+
+/* CTA Section */
+.cta{
+padding:100px 0;
+background:linear-gradient(135deg,var(--google-blue) 0%,var(--google-blue-light) 100%);
+text-align:center;
+color:white;
+}
+
+.cta h2{
+font-size:48px;
+font-weight:400;
+color:white;
+margin-bottom:24px;
+}
+
+.cta p{
+font-size:20px;
+margin-bottom:40px;
+opacity:0.95;
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.cta .btn-primary{
+background:white;
+color:var(--google-blue);
+}
+
+.cta .btn-primary:hover{
+background:#f8f9fa;
+}
+
+/* Footer */
+footer{
+padding:40px 0;
+background:var(--google-light-gray);
+border-top:1px solid var(--google-border);
+}
+
+.footer-content{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:24px;
+}
+
+.footer-links{
+display:flex;
+gap:32px;
+}
+
+.footer-links a{
+color:var(--text-secondary);
+text-decoration:none;
+font-size:14px;
+transition:color 0.2s;
+}
+
+.footer-links a:hover{
+color:var(--text-primary);
+}
+
+.copyright{
+color:var(--text-secondary);
+font-size:14px;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+.hero h1{
+font-size:40px;
+}
+.hero .subtitle{
+font-size:18px;
+}
+.hero-buttons{
+flex-direction:column;
+}
+.section-header h2{
+font-size:32px;
+}
+.cta h2{
+font-size:36px;
+}
+.footer-content{
+flex-direction:column;
+text-align:center;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<div class="container" style="display:flex;justify-content:space-between;align-items:center;width:100%;">
+<div class="logo">Antview <span>CRM</span></div>
+<div class="nav-links">
+<a href="#features">Features</a>
+<a href="#stats">About</a>
+<a href="#cta">Contact</a>
+</div>
+</div>
+</nav>
+
+<section class="hero">
+<div class="container">
+<h1>Smart CRM for Coaching Centers</h1>
+<p class="subtitle">
+Manage students, leads, admissions, fees and communication in one powerful platform. 
+Built specifically for educational institutes.
+</p>
+<div class="hero-buttons">
+<a href="#cta" class="btn-primary">
+Get started
+<span class="material-icons" style="font-size:18px;">arrow_forward</span>
+</a>
+<a href="#features" class="btn-secondary">
+Learn more
+</a>
+</div>
+</div>
+</section>
+
+<section id="features" class="features">
+<div class="container">
+<div class="section-header">
+<h2>Everything you need to manage your institute</h2>
+<p>Powerful features designed to streamline operations and improve student engagement</p>
+</div>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">
+<span class="material-icons">people</span>
+</div>
+<h3>Lead Management</h3>
+<p>Track and convert leads efficiently with automated follow-ups and smart segmentation tools.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">
+<span class="material-icons">school</span>
+</div>
+<h3>Student Management</h3>
+<p>Manage complete student profiles, attendance, and academic progress all in one place.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">
+<span class="material-icons">payments</span>
+</div>
+<h3>Fee Tracking</h3>
+<p>Automated fee collection reminders with comprehensive payment history tracking.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">
+<span class="material-icons">groups</span>
+</div>
+<h3>Batch Allocation</h3>
+<p>Organize students into batches with smart scheduling and capacity management.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">
+<span class="material-icons">chat</span>
+</div>
+<h3>WhatsApp Integration</h3>
+<p>Send automated reminders and updates directly via WhatsApp messaging platform.</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">
+<span class="material-icons">analytics</span>
+</div>
+<h3>Analytics Dashboard</h3>
+<p>Real-time insights and data visualization for informed decision making.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="stats" class="stats">
+<div class="container">
+<div class="section-header">
+<h2>Trusted by coaching centers nationwide</h2>
+<p>Join hundreds of institutes that have transformed their operations with Antview CRM</p>
+</div>
+<div class="stats-grid">
+<div class="stat-item">
+<div class="stat-number">500+</div>
+<div class="stat-label">Active Institutes</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">50K+</div>
+<div class="stat-label">Students Managed</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">99%</div>
+<div class="stat-label">Uptime Guarantee</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">24/7</div>
+<div class="stat-label">Customer Support</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="cta" class="cta">
+<div class="container">
+<h2>Ready to get started?</h2>
+<p>Transform your coaching center with Antview CRM. Start your free trial today.</p>
+<a href="#" class="btn-primary" style="font-size:16px;padding:14px 32px;">
+Request a demo
+<span class="material-icons" style="font-size:20px;">arrow_forward</span>
+</a>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="copyright">© 2026 Antview CRM. All rights reserved.</div>
+<div class="footer-links">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+<a href="#">Contact Us</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body>
+</html>
