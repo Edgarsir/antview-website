@@ -848,6 +848,10 @@ margin-top:20px;
 margin-bottom:30px;
 }
 .feature-visual{
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 padding:20px;
 }
 .feature-icon-large{
@@ -2003,6 +2007,14 @@ html {
     
     .feature-row-reverse .feature-visual {
         order: 1;
+    }
+    
+    .feature-visual {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
     }
     
     .feature-row-reverse .feature-content {
