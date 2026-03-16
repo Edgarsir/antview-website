@@ -196,8 +196,8 @@ font-size:20px;
 <div class="pricing-card">
 <div class="plan-name">Starter</div>
 <div class="plan-price">
-<span class="monthly-price">₹2,999</span>
-<span class="yearly-price" style="display:none;">₹28,788</span>
+<span class="monthly-price">₹799</span>
+<span class="yearly-price" style="display:none;">₹7,670</span>
 <span class="price-period">/month</span>
 </div>
 <div class="plan-description">Perfect for small coaching centers</div>
@@ -215,11 +215,11 @@ font-size:20px;
 <div class="recommended-badge">Recommended</div>
 <div class="plan-name">Professional</div>
 <div class="plan-price">
-<span class="monthly-price">₹5,999</span>
-<span class="yearly-price" style="display:none;">₹57,590</span>
+<span class="monthly-price">₹1,599</span>
+<span class="yearly-price" style="display:none;">₹15,350</span>
 <span class="price-period">/month</span>
 </div>
-<div class="yearly-savings" style="display:none;">Save ₹14,398/year</div>
+<div class="yearly-savings" style="display:none;">Save ₹3,838/year</div>
 <div class="plan-description">Most popular for growing institutes</div>
 <ul class="plan-features">
 <li><span class="material-icons">check_circle</span> Up to 500 students</li>
@@ -327,6 +327,7 @@ document.getElementById('billingToggle').addEventListener('change', function() {
     const monthlyPrices = document.querySelectorAll('.monthly-price');
     const yearlyPrices = document.querySelectorAll('.yearly-price');
     const yearlySavings = document.querySelectorAll('.yearly-savings');
+    const pricePeriods = document.querySelectorAll('.price-period');
     
     monthlyPrices.forEach(price => {
         price.style.display = isYearly ? 'none' : 'inline';
@@ -338,6 +339,10 @@ document.getElementById('billingToggle').addEventListener('change', function() {
     
     yearlySavings.forEach(saving => {
         saving.style.display = isYearly ? 'block' : 'none';
+    });
+    
+    pricePeriods.forEach(period => {
+        period.textContent = isYearly ? '/yearly' : '/month';
     });
 });
 </script>
